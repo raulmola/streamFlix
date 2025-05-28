@@ -1,4 +1,4 @@
-package com.agiletv.streamFlix;
+package com.agiletv.streamFlix.adapters;
 
 import jakarta.persistence.*;
 

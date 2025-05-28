@@ -1,4 +1,4 @@
-package com.agiletv.streamFlix;
+package com.agiletv.streamFlix.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

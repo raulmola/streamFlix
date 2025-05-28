@@ -1,8 +1,8 @@
-package com.agiletv.streamFlix;
+package com.agiletv.streamFlix.adapters;
 
+import com.agiletv.streamFlix.application.Movie;
+import com.agiletv.streamFlix.application.MovieRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public class MySqlMovieRepository implements MovieRepository {

@@ -1,9 +1,9 @@
-package com.agiletv.streamFlix;
+package com.agiletv.streamFlix.application;
 
-class MovieApplication implements MovieCreator {
+public class MovieApplication implements MovieCreator {
     private final MovieRepository repository;
 
-    MovieApplication(MovieRepository repository) {
+    public MovieApplication(MovieRepository repository) {
         this.repository = repository;
     }
 

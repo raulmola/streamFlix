@@ -1,5 +1,7 @@
-package com.agiletv.streamFlix;
+package com.agiletv.streamFlix.adapters;
 
+import com.agiletv.streamFlix.application.MovieCreatorDTO;
+import com.agiletv.streamFlix.application.MovieCreator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
