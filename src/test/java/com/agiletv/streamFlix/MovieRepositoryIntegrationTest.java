@@ -20,13 +20,11 @@ class MovieRepositoryIntegrationTest {
 
     @BeforeEach
     void setUp() {
-        // Configuración inicial antes de cada test
         jpaMovieRepository.deleteAll(); // Limpia la base de datos
     }
 
     @AfterEach
     void tearDown() {
-        // Limpieza después de cada test
         jpaMovieRepository.deleteAll(); // Limpia la base de datos
     }
 
