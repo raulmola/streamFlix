@@ -1,8 +1,5 @@
 package com.agiletv.streamFlix;
 
-import org.springframework.stereotype.Service;
-
-@Service
 class MovieApplication implements MovieCreator {
     private final MovieRepository repository;
 

@@ -1,5 +1,7 @@
 package com.agiletv.streamFlix;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +17,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Transactional
 @Rollback
 class MovieRepositoryIntegrationTest {
+
+    @BeforeEach
+    void setUp() {
+        // Configuración inicial antes de cada test
+        jpaMovieRepository.deleteAll(); // Limpia la base de datos
+    }
+
+    @AfterEach
+    void tearDown() {
+        // Limpieza después de cada test
+        jpaMovieRepository.deleteAll(); // Limpia la base de datos
+    }
 
     @Autowired
     private MovieRepository movieRepository;
