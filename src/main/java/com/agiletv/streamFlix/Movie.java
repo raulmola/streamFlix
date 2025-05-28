@@ -4,20 +4,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Movie {
-    private String title;
-    private String description;
-    private int releaseYear;
-    private String director;
-    private List<String> genres;
-    private int duration;
-    private String ageRating;
-    private String coverImageUrl;
-    private double averageRating;
-    private LocalDate addedDate;
-
-    public Movie() {
-        // Default constructor
-    }
+    private final String title;
+    private final String description;
+    private final int releaseYear;
+    private final String director;
+    private final List<String> genres;
+    private final int duration;
+    private final String ageRating;
+    private final String coverImageUrl;
+    private final double averageRating;
+    private final LocalDate addedDate;
 
     private Movie(String title, String description, int releaseYear, String director,
                   List<String> genres, int duration, String ageRating,
@@ -34,9 +30,9 @@ public class Movie {
         this.addedDate = addedDate;
     }
 
-    public static Movie NameConstructor(String title, String description, int releaseYear, String director,
-                                        List<String> genres, int duration, String ageRating,
-                                        String coverImageUrl, double averageRating, LocalDate addedDate) {
+    public static Movie create(String title, String description, int releaseYear, String director,
+                               List<String> genres, int duration, String ageRating,
+                               String coverImageUrl, double averageRating, LocalDate addedDate) {
         return new Movie(title, description, releaseYear, director, genres, duration, ageRating, coverImageUrl, averageRating, addedDate);
     }
 
