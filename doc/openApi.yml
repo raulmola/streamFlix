@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: StreamFlix API
+  description: API for managing movies in the StreamFlix platform.
+  version: 1.0.0
+paths:
+  /api/movies:
+    post:
+      summary: Create a new movie
+      description: Allows the creation of a new movie. Only accessible to users with the Admin role.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Test Movie
+                description:
+                  type: string
+                  example: A test movie description
+                releaseYear:
+                  type: integer
+                  example: 2023
+                director:
+                  type: string
+                  example: Test Director
+                genres:
+                  type: array
+                  items:
+                    type: string
+                  example: ["Action", "Adventure"]
+                duration:
+                  type: integer
+                  example: 120
+                ageRating:
+                  type: string
+                  example: PG-13
+                coverImageUrl:
+                  type: string
+                  format: uri
+                  example: http://example.com/test-movie.jpg
+                averageRating:
+                  type: number
+                  format: float
+                  example: 4.5
+                addedDate:
+                  type: string
+                  format: date
+                  example: 2023-10-01
+      responses:
+        '401':
+          description: Unauthorized. User does not have the Admin role.
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
