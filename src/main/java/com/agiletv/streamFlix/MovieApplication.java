@@ -9,7 +9,18 @@ class MovieApplication implements MovieCreator {
 
     @Override
     public void create(MovieCreatorDTO dto) {
-        Movie movie = new Movie();
+        Movie movie = Movie.NameConstructor(
+            dto.title(),
+            dto.description(),
+            dto.releaseYear(),
+            dto.director(),
+            dto.genres(),
+            dto.duration(),
+            dto.ageRating(),
+            dto.coverImageUrl(),
+            dto.averageRating(),
+            dto.addedDate()
+        );
         repository.save(movie);
     }
 }
