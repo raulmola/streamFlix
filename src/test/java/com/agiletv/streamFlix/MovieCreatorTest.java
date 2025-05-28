@@ -2,6 +2,8 @@ package com.agiletv.streamFlix;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -13,6 +15,11 @@ class MovieCreatorTest {
         @Override
         public void save(Movie movie) {
             this.savedMovie = movie;
+        }
+
+        @Override
+        public List<Movie> findAll() {
+            return List.of();
         }
     }
 
