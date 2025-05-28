@@ -22,7 +22,7 @@ class MovieCreatorTest {
         FakeMovieRepository fakeRepo = new FakeMovieRepository();
         MovieCreator creator = new MovieApplication(fakeRepo);
 
-        MovieCreatorDTO dto = new MovieCreatorDTO(
+        MovieCreatorCommand dto = new MovieCreatorCommand(
                 "Test Movie", "A test movie description", 2023, "Test Director",
                 java.util.List.of("Action", "Adventure"), 120, "PG-13",
                 "http://example.com/test-movie.jpg", 4.5, java.time.LocalDate.parse("2023-10-01")
@@ -38,7 +38,7 @@ class MovieCreatorTest {
         FakeMovieRepository fakeRepo = new FakeMovieRepository();
         MovieCreator creator = new MovieApplication(fakeRepo);
 
-        MovieCreatorDTO dto = new MovieCreatorDTO(
+        MovieCreatorCommand dto = new MovieCreatorCommand(
                 "Test Movie", "A test movie description", 2023, "Test Director",
                 java.util.List.of("Action", "Adventure"), 120, "PG-13",
                 "http://example.com/test-movie.jpg", 4.5, java.time.LocalDate.parse("2023-10-01")

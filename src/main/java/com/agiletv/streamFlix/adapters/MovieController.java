@@ -1,6 +1,6 @@
 package com.agiletv.streamFlix.adapters;
 
-import com.agiletv.streamFlix.application.MovieCreatorDTO;
+import com.agiletv.streamFlix.application.MovieCreatorCommand;
 import com.agiletv.streamFlix.application.MovieCreator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class MovieController {
 
     @PostMapping
     public ResponseEntity<Void> createMovie(@RequestBody MovieCreatorApiDto movieCreatorApiDto) {
-        MovieCreatorDTO movieCreatorDTO = new MovieCreatorDTO(
+        MovieCreatorCommand movieCreatorDTO = new MovieCreatorCommand(
             movieCreatorApiDto.title(),
             movieCreatorApiDto.description(),
             movieCreatorApiDto.releaseYear(),

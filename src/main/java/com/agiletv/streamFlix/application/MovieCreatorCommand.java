@@ -3,7 +3,7 @@ package com.agiletv.streamFlix.application;
 import java.time.LocalDate;
 import java.util.List;
 
-public record MovieCreatorDTO(
+public record MovieCreatorCommand(
         String title,
         String description,
         int releaseYear,

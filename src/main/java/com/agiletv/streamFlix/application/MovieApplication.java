@@ -8,7 +8,7 @@ public class MovieApplication implements MovieCreator {
     }
 
     @Override
-    public void create(MovieCreatorDTO dto) {
+    public void create(MovieCreatorCommand dto) {
         Movie movie = Movie.create(
             dto.title(),
             dto.description(),
