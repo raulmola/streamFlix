@@ -1,4 +1,4 @@
-package com.agiletv.streamFlix.adapters;
+package com.agiletv.streamFlix.adapters.primary.controller;
 
 import java.time.LocalDate;
 import java.util.List;

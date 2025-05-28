@@ -1,6 +1,8 @@
 package com.agiletv.streamFlix;
 
 import com.agiletv.streamFlix.application.*;
+import com.agiletv.streamFlix.application.ports.primary.MovieCreator;
+import com.agiletv.streamFlix.application.ports.secundary.MovieRepository;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

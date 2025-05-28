@@ -1,7 +1,7 @@
-package com.agiletv.streamFlix.adapters;
+package com.agiletv.streamFlix.adapters.secundary;
 
 import com.agiletv.streamFlix.application.Movie;
-import com.agiletv.streamFlix.application.MovieRepository;
+import com.agiletv.streamFlix.application.ports.secundary.MovieRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

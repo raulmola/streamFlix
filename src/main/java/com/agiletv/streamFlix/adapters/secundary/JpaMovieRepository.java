@@ -1,4 +1,4 @@
-package com.agiletv.streamFlix.adapters;
+package com.agiletv.streamFlix.adapters.secundary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

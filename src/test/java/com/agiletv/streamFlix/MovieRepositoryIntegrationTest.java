@@ -1,9 +1,9 @@
 package com.agiletv.streamFlix;
 
-import com.agiletv.streamFlix.adapters.JpaMovieRepository;
-import com.agiletv.streamFlix.adapters.MovieEntity;
+import com.agiletv.streamFlix.adapters.secundary.JpaMovieRepository;
+import com.agiletv.streamFlix.adapters.secundary.MovieEntity;
 import com.agiletv.streamFlix.application.Movie;
-import com.agiletv.streamFlix.application.MovieRepository;
+import com.agiletv.streamFlix.application.ports.secundary.MovieRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
