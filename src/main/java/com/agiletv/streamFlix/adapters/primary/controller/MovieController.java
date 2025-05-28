@@ -1,6 +1,6 @@
 package com.agiletv.streamFlix.adapters.primary.controller;
 
-import com.agiletv.streamFlix.application.MovieCreatorCommand;
+import com.agiletv.streamFlix.application.ports.primary.MovieCreatorCommand;
 import com.agiletv.streamFlix.application.ports.primary.MovieCreator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

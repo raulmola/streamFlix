@@ -1,4 +1,4 @@
-package com.agiletv.streamFlix.application;
+package com.agiletv.streamFlix.application.ports.primary;
 
 import java.time.LocalDate;
 import java.util.List;
