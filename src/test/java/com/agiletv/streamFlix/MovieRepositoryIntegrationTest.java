@@ -19,6 +19,9 @@ class MovieRepositoryIntegrationTest {
     @Autowired
     private MovieRepository movieRepository;
 
+    @Autowired
+    private JpaMovieRepository jpaMovieRepository;
+
     @Test
     void shouldPersistMovieInDatabase() {
         // Arrange
@@ -39,9 +42,8 @@ class MovieRepositoryIntegrationTest {
         movieRepository.save(movie);
 
         // Assert
-        // Assuming the repository has a method to find all movies
-        List<Movie> movies = movieRepository.findAll();
-        assertThat(movies).isNotEmpty();
-        assertThat(movies.get(0).getTitle()).isEqualTo("Test Movie");
+        MovieEntity persistedMovie = jpaMovieRepository.findByTitle("Test Movie");
+        assertThat(persistedMovie).isNotNull();
+        assertThat(persistedMovie.getTitle()).isEqualTo("Test Movie");
     }
 }

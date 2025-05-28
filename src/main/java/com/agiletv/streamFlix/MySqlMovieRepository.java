@@ -1,6 +1,5 @@
 package com.agiletv.streamFlix;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -8,7 +7,6 @@ import java.util.List;
 @Repository
 public class MySqlMovieRepository implements MovieRepository {
 
-    @Autowired
     private final JpaMovieRepository jpaMovieRepository;
 
     public MySqlMovieRepository(JpaMovieRepository jpaMovieRepository) {
@@ -30,23 +28,5 @@ public class MySqlMovieRepository implements MovieRepository {
         movieEntity.setAddedDate(movie.getAddedDate());
 
         jpaMovieRepository.save(movieEntity);
-    }
-
-    @Override
-    public List<Movie> findAll() {
-        return jpaMovieRepository.findAll().stream().map(entity -> {
-            return Movie.create(
-                entity.getTitle(),
-                entity.getDescription(),
-                entity.getReleaseYear(),
-                entity.getDirector(),
-                entity.getGenres(),
-                entity.getDuration(),
-                entity.getAgeRating(),
-                entity.getCoverImageUrl(),
-                entity.getAverageRating(),
-                entity.getAddedDate()
-            );
-        }).toList();
     }
 }

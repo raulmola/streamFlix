@@ -16,11 +16,6 @@ class MovieCreatorTest {
         public void save(Movie movie) {
             this.savedMovie = movie;
         }
-
-        @Override
-        public List<Movie> findAll() {
-            return List.of();
-        }
     }
 
     @Test
