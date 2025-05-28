@@ -1,16 +1,35 @@
 package com.agiletv.streamFlix;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/movies")
 public class MovieController {
 
-  @PostMapping
-  public ResponseEntity<Void> createMovie() {
-    throw new UnsupportedOperationException("This endpoint is not implemented yet.");
-  }
+    private final MovieCreator movieCreator;
+
+    public MovieController(MovieCreator movieCreator) {
+        this.movieCreator = movieCreator;
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> createMovie(@RequestBody MovieCreatorApiDto movieCreatorApiDto) {
+        MovieCreatorDTO movieCreatorDTO = new MovieCreatorDTO(
+            movieCreatorApiDto.title(),
+            movieCreatorApiDto.description(),
+            movieCreatorApiDto.releaseYear(),
+            movieCreatorApiDto.director(),
+            movieCreatorApiDto.genres(),
+            movieCreatorApiDto.duration(),
+            movieCreatorApiDto.ageRating(),
+            movieCreatorApiDto.coverImageUrl(),
+            movieCreatorApiDto.averageRating(),
+            movieCreatorApiDto.addedDate()
+        );
+
+        movieCreator.create(movieCreatorDTO);
+        return ResponseEntity.status(201).build();
+    }
 }
+

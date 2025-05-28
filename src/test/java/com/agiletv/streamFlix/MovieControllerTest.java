@@ -1,6 +1,5 @@
 package com.agiletv.streamFlix;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -41,7 +40,6 @@ class MovieControllerTest {
   }
 
   @Test
-  @Disabled
   @WithMockUser(username = "admin", roles = {"ADMIN"})
   void createMovieWithAdminRoleShouldReturnCreated() throws Exception {
       mockMvc.perform(post("/api/movies")
