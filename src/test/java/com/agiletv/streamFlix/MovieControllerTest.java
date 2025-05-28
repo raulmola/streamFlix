@@ -1,5 +1,6 @@
 package com.agiletv.streamFlix;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -37,5 +38,28 @@ class MovieControllerTest {
                 }
                 """))
         .andExpect(status().isUnauthorized());
+  }
+
+  @Test
+  @Disabled
+  @WithMockUser(username = "admin", roles = {"ADMIN"})
+  void createMovieWithAdminRoleShouldReturnCreated() throws Exception {
+      mockMvc.perform(post("/api/movies")
+              .contentType(MediaType.APPLICATION_JSON)
+              .content("""
+                  {
+                    "title": "Test Movie",
+                    "description": "A test movie description",
+                    "releaseYear": 2023,
+                    "director": "Test Director",
+                    "genres": ["Action", "Adventure"],
+                    "duration": 120,
+                    "ageRating": "PG-13",
+                    "coverImageUrl": "http://example.com/test-movie.jpg",
+                    "averageRating": 4.5,
+                    "addedDate": "2023-10-01"
+                  }
+                  """))
+          .andExpect(status().isCreated());
   }
 }
